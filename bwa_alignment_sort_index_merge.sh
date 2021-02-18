@@ -1,5 +1,7 @@
 #!/bin/sh
 
+bwa index Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa 
+
 for n in {1..2}
 do 
 	bwa mem -R '@RG\tID:'"$n"'\tLB:library\tPL:Illumina\tPU:lane'"$n"'\tSM:yeast' \
