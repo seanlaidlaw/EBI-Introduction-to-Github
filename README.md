@@ -16,47 +16,12 @@ The following README is a copy of the 2021 Google Docs walkthrough of the intera
 1. If you run `ls` after this you should see a new folder called 'EBI-Introduction-to-Github'
 1. Inside this folder you should see the contents that you see on the github page you just cloned
 1. Edit the bash script in the cloned folder, and add the command to index the fasta file to the beginning of the script
-<details>
-<summary>Extra Help</summary>
-
-```{bash}
-# to edit the script
-$ nano bwa_alignment_sort_index_merge.sh
-```
-
-```{bash}
-# to index the reference, we add a `bwa index` commmand to the top of the script
-$ bwa index Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa
-```
-</details>
-
-
-6. Run `git status` in the terminal to make sure git sees that your file has changed
-
+1. Run `git status` in the terminal to make sure git sees that your file has changed
 1. Run `git diff` in the terminal to show what lines changed
 1. add the changed file command to the git repository
-
-<details>
-<summary>Extra Help</summary>
-
-```{bash}
-# to add the script to the git repository
-$ git add bwa_alignment_sort_index_merge.sh
-```
-</details>
-
-9. Run `git status` again to see that git has now added the file.
-
-10. commit the changes: use the `-m` argument and write what you’re committing
-<details>
-<summary>Extra Help</summary>
-
-```{bash}
-$ git commit -m "fix script to index reference fasta before aligning"
-```
-</details>
-
-11. Run `git log` to see your list of commits
+1. Run `git status` again to see that git has now added the file.
+1. commit the changes: use the `-m` argument and write what you’re committing
+1. Run `git log` to see your list of commits
 
 
 ### Part 2: Optimisng Space
@@ -66,12 +31,7 @@ We remember learning about cram files and their improved storage efficiency.
 Lets modify the script once more, and add a command to the pipeline that will take the produced bam file, and convert it to a cram file.
 Once we have a more efficient script we should remember to commit this change so everyone on Github, can see how efficient we are in genomics.
 
-<details>
-<summary>Extra Help</summary>
+### Part 3: Viewing prior versions
+Now you have improved and committed your script, you may want to see what you had before. Use `git log` to get the identifier of the commit before yours. You can turn back time in the git repository by running `git checkout` then the commit identifier. 
 
-```{bash}
-# if I wanted to convert an individual Bam file to a Cram file I might run something like this:
-# (although I would change the filenames for my fasta and bam files to match my situation)
-$ samtools view -C -T "my_reference.fasta" input.bam > output.cram
-```
-</details>
+Have a look at the script at this point. You can return to present-day by running `git checkout main`.
