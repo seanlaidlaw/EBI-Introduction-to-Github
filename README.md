@@ -75,3 +75,8 @@ Once we have a more efficient script we should remember to commit this change so
 $ samtools view -C -T "my_reference.fasta" input.bam > output.cram
 ```
 </details>
+
+### Part 3: Viewing prior versions
+Now you have improved and committed your script, you may want to see what you had before. Use `git log` to get the identifier of the commit before yours. You can turn back time in the git repository by running `git checkout` then the commit identifier. 
+
+Have a look at the script at this point. You can return to present-day by running `git checkout main`.
