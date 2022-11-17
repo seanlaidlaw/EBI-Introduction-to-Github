@@ -1,15 +1,15 @@
 #!/bin/sh
 
-bwa index Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa 
+bwa index Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa
 
 for n in {1..2}
-do 
+do
 	bwa mem -R '@RG\tID:'"$n"'\tLB:library\tPL:Illumina\tPU:lane'"$n"'\tSM:yeast' \
 	Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa \
 	lane$n/s-7-1.trim.paired.fastq lane$n/s-7-2.trim.paired.fastq | \
 	samtools view -b - | \
-	samtools sort - -o lane${n}_sorted.bam  && 
-	
+	samtools sort - -o lane${n}_sorted.bam  &&
+
 	samtools index lane${n}_sorted.bam
 done
 
