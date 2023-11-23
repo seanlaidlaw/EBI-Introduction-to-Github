@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # something seems to be missing here that means this code doesn't run
 # an error occurs saying 'Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa' has no index
